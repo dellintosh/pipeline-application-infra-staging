@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    app: <<PROJECT_NAME>>
+  name: <<PROJECT_NAME>>
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+spec:
+  tls:
+  - hosts:
+      - <<PROJECT_NAME>>.dev.coinlion.io
+    secretName: <<PROJECT_NAME>>-tls
+  rules:
+  - host: <<PROJECT_NAME>>.dev.coinlion.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: <<PROJECT_NAME>>
+          servicePort: 80

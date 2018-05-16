@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: <<PROJECT_NAME>>
+  namespace: default
+spec:
+  selector:
+    app: <<PROJECT_NAME>>
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
