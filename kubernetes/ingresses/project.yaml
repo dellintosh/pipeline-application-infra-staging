@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
   - hosts:
-      - pipeline-application.dev.example.com
+      - pipeline-application.staging.example.com
     secretName: pipeline-application-tls
   rules:
-  - host: pipeline-application.dev.example.com
+  - host: pipeline-application.staging.example.com
     http:
       paths:
       - path: /
