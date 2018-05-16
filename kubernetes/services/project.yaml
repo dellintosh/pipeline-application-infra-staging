@@ -1,11 +1,11 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: <<PROJECT_NAME>>
+  name: pipeline-application
   namespace: default
 spec:
   selector:
-    app: <<PROJECT_NAME>>
+    app: pipeline-application
   ports:
     - protocol: TCP
       port: 80

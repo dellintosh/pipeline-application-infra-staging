@@ -2,21 +2,21 @@ apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   labels:
-    app: <<PROJECT_NAME>>
-  name: <<PROJECT_NAME>>
+    app: pipeline-application
+  name: pipeline-application
   namespace: default
 spec:
   selector:
     matchLabels:
-      app: <<PROJECT_NAME>>
+      app: pipeline-application
   template:
     metadata:
       labels:
-        app: <<PROJECT_NAME>>
+        app: pipeline-application
     spec:
       containers:
-      - image: 277866474112.dkr.ecr.us-east-1.amazonaws.com/<<PROJECT_NAME>>
-        name: <<PROJECT_NAME>>
+      - image: dellintosh/pipeline-application
+        name: pipeline-application
         ports:
         - containerPort: 80
           name: http
